@@ -79,7 +79,7 @@
     "@angular/language-service": "~11.2.14",
     "@angular/platform-browser": "~11.2.14",
     "@angular/platform-browser-dynamic": "~11.2.14",
-    "@angular/pwa": "~0.1002.0",
+    "@angular/pwa": "~0.1102.19",
     "@angular/router": "~11.2.14",
     "@angular/service-worker": "~11.2.14",
     "@commitlint/cli": "^11.0.0",
