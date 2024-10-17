@@ -63,15 +63,13 @@
   ],
   "license": "MIT",
   "private": false,
-  "peerDependencies": {
-    "@angular/cdk": "^10.2.6"
-  },
+  "peerDependencies": {},
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.19",
     "@angular-devkit/schematics": "~11.2.19",
     "@angular-devkit/schematics-cli": "^0.1002.0",
     "@angular/animations": "~11.2.14",
-    "@angular/cdk": "^10.2.6",
+    "@angular/cdk": "^11.2.13",
     "@angular/cli": "~11.2.19",
     "@angular/common": "~11.2.14",
     "@angular/compiler": "~11.2.14",
