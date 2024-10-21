@@ -1,4 +1,4 @@
-import { red } from '@angular-devkit/core/src/terminal';
+import * as ansiColors from 'ansi-colors';
 import {
   chain,
   Rule,
@@ -38,6 +38,9 @@ export default function(options: ngxOneSignalSchema): Rule {
   };
 }
 
+// Create a separate instance to prevent unintended global changes to the color configuration
+const colors = ansiColors.create();
+
 function addNgxOnesignalModule(options: ngxOneSignalSchema): Rule {
   return (tree: Tree, context: SchematicContext) => {
     const MODULE_NAME = `NgxOneSignalModule.forRoot({ appId: '${options.appId}'}),`;
@@ -47,7 +50,7 @@ function addNgxOnesignalModule(options: ngxOneSignalSchema): Rule {
 
     if (hasNgModuleImport(tree, appModulePath, MODULE_NAME)) {
       return console.warn(
-        red(
+        colors.red(
           `Could not import "NgxOneSignalModule" because "NgxOneSignalModule" is already imported.`,
         ),
       );
