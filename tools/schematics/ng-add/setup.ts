@@ -85,18 +85,13 @@ function updateAngularJson(options: ngxOneSignalSchema): Rule {
       const project = getProjectFromWorkspace(workspace, options.project);
       const targetOptions = getProjectTargetOptions(project, 'build');
 
-      if (targetOptions.assets) {
-        targetOptions.assets = [
-          join(project.sourceRoot, 'OneSignalSDKWorker.js'),
-          join(project.sourceRoot, 'OneSignalSDKUpdaterWorker.js'),
-          ...targetOptions.assets
-        ];
-      } else {
-        targetOptions.assets = [
-          join(project.sourceRoot, 'OneSignalSDKWorker.js'),
-          join(project.sourceRoot, 'OneSignalSDKUpdaterWorker.js'),
-        ];
-      }
+      const assets = Array.isArray(targetOptions.assets) ? targetOptions.assets : [];
+      targetOptions.assets = [
+        join(project.sourceRoot, 'OneSignalSDKWorker.js'),
+        join(project.sourceRoot, 'OneSignalSDKUpdaterWorker.js'),
+        ...assets
+      ];
+
       tree.overwrite('angular.json', JSON.stringify(workspace, null, 2));
 
       return tree;
