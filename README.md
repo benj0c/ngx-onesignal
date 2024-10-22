@@ -73,8 +73,9 @@ npm run serve:ssr
 
 ## Supported
 
-|  Angular version  |  ngx-onestop version  | support |
+|  Angular version  |  ngx-onesignal version  | support |
 | ---- | ---- | ---- |
+|  11  | 11.x  | ○ |
 |  10  | 10.x  | ○ |
 |  9  |  10.x  | ○ |
 |  8  |  8.x  | - |
